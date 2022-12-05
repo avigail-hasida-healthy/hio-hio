@@ -2,12 +2,13 @@
   "name": "auth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "spec": "swagger-jsdoc -d openapiDefinition.json ./src/routes/*.ts ../../tools/api-spec/*.spec -o openapi.json",
     "build-client": "openapi-generator-cli generate -i openapi.json -g typescript-axios -o ../../clients/auth-client -t ../../tools/client-template -p npmName=@hio-hio/auth-client",
     "build": "npm run spec && npm run build-client && tsc --build",
     "prepare": "npm run build",
+    "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import { init as initUser } from "./models/user";
 
-const uri = "postgres://gw-dev:@localhost:5437/gw-dev";
+const uri = "postgres://hio-hio-dev:@localhost:5438/hio-hio-dev";
 
 let sequelize: Sequelize;
 

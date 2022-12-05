@@ -3,17 +3,6 @@ import { UniqueConstraintError } from "sequelize";
 import { User, UserModel } from "../lib/models/user";
 
 /**
- * Get a user by its name
- * @param name The user name
- * @returns The user
- */
-export const getByName = async (name: string) => {
-  const user = await User.findOne({ where: { name }, raw: true });
-
-  return user as UserModel;
-};
-
-/**
  * Create a new user
  * @param name The user name
  * @param hashedPassword The user hashed password

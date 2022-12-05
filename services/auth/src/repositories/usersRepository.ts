@@ -1,4 +1,5 @@
 import { AlreadyExistsError } from "@hio-hio/errors";
+import { CreationModel } from "@hio-hio/interfaces";
 import { UniqueConstraintError } from "sequelize";
 import { User, UserModel } from "../lib/models/user";
 
@@ -10,7 +11,7 @@ import { User, UserModel } from "../lib/models/user";
 export const getByName = async (name: string): Promise<UserModel> => {
   const user = await User.findOne({ where: { name }, raw: true });
 
-  return user as UserModel;
+  return user;
 };
 
 /**
@@ -19,11 +20,13 @@ export const getByName = async (name: string): Promise<UserModel> => {
  * @param hashedPassword The user hashed password
  * @returns Returns the created user
  */
-export const create = async (createModel: Omit<UserModel, "id">) => {
+export const create = async (
+  createModel: CreationModel<UserModel>
+): Promise<UserModel> => {
   try {
     const user = await User.create(createModel);
 
-    return user.get({ plain: true }) as UserModel;
+    return user.get({ plain: true });
   } catch (error) {
     if (error instanceof UniqueConstraintError) {
       throw new AlreadyExistsError("User name already exists");

@@ -16,6 +16,7 @@
   "dependencies": {
     "@hio-hio/errors": "^1.0.0",
     "@hio-hio/helpers": "^1.0.0",
+    "@hio-hio/interfaces": "^1.0.0",
     "@hio-hio/middleware": "^1.0.0",
     "bcrypt": "^5.1.0",
     "express": "^4.18.2",

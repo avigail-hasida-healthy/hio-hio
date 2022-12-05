@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "CommonJS",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "resolveJsonModule": true
+  } ,
+  "references": [
+    { 
+      "path": "./packages/errors"
+    },
+    { 
+      "path": "./packages/interfaces"
+    },
+    { 
+      "path": "./packages/helpers"
+    },
+    { 
+      "path": "./clients/auth-client"
+    },
+    { 
+      "path": "./clients/hios-client"
+    }
+  ]
+}

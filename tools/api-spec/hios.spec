@@ -24,7 +24,7 @@
  *           type: string
  *           format: date-time
  *           description: The date and time in which the hio was created
- *           example: 
+ *           example: 2022-12-01T10:30:30.791Z
  * tags:
  *   - name: Hios
  */

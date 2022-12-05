@@ -85,16 +85,7 @@ export const setupRouter = () => {
    *         content:
    *           application/json:
    *             schema:
-   *               type: object
-   *               properties:
-   *                 id:
-   *                   type: string
-   *                   format: uuid
-   *                   description: The user Id
-   *                   example: a09e386b-371d-4c33-9e96-134a69d2904e
-   *                 username:
-   *                   type: string
-   *                   description: The user name
+   *               $ref: '#/components/schemas/User'
    *       400:
    *         $ref: '#/components/responses/BadRequest'
    *       401:
@@ -141,11 +132,7 @@ export const setupRouter = () => {
    *         content:
    *           application/json:
    *             schema:
-   *               type: object
-   *               properties:
-   *                 token:
-   *                   type: string
-   *                   description: The logged in user token to use in secure routes
+   *               $ref: '#/components/schemas/User'
    *       400:
    *         $ref: '#/components/responses/BadRequest'
    *       401:
@@ -161,3 +148,25 @@ export const setupRouter = () => {
 
   return authRouter;
 };
+
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *    User:
+ *      type: object
+ *      properties:
+ *        id:
+ *          type: string
+ *          format: uuid
+ *          description: The user id
+ *          example: 956366d9-79e7-4f72-8698-5c9f18e8a227
+ *        username:
+ *          type: string
+ *          description: The user name
+ *          example: john.doe
+ *        token:
+ *          type: string
+ *          description: The signed jwt token
+ *          example: TOP SECRET
+ */

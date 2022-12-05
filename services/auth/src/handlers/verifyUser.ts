@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { UnauthorizedError } from "@gw-workshop/errors";
+import { UnauthorizedError } from "@hio-hio/errors";
 import { VerifyUserDto } from "../dto/verifyUserDto";
 import { UserDto } from "../dto/userDto";
 import { compareHash } from "../lib/crypto";

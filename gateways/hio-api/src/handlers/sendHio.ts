@@ -1,4 +1,4 @@
-import { Hio } from "@gw-workshop/hios-client";
+import { Hio } from "@hio-hio/hios-client";
 import { SendHioDto, HioDto } from "../dtos/hioDto";
 import { RequestWithUser } from "../interfaces/requestWithUser";
 import { hiosApi } from "../lib/hiosClient";

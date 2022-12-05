@@ -1,4 +1,4 @@
-import { AlreadyExistsError } from "@gw-workshop/errors";
+import { AlreadyExistsError } from "@hio-hio/errors";
 import { UniqueConstraintError } from "sequelize";
 import { User, UserModel } from "../lib/models/user";
 

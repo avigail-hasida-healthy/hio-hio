@@ -1,4 +1,4 @@
-import { HiosApi } from "@gw-workshop/hios-client";
+import { HiosApi } from "@hio-hio/hios-client";
 
 /**
  * The Hios Api client

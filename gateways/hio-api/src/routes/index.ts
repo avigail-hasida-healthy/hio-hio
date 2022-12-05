@@ -2,7 +2,7 @@ import { Application } from "express";
 import passport from "passport";
 import { Strategy as JWTStrategy, ExtractJwt } from "passport-jwt";
 import swaggerUi from "swagger-ui-express";
-import { validateApiSpec } from "@gw-workshop/middleware";
+import { validateApiSpec } from "@hio-hio/middleware";
 import apiSpec from "../../openapi.json";
 import { setupRouter as setupHiosRouter } from "./hios";
 import { setupRouter as setupAuthRouter } from "./auth";

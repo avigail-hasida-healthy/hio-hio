@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { CreationModel } from "@gw-workshop/interfaces";
+import { CreationModel } from "@hio-hio/interfaces";
 import { Hio, HioModel } from "../lib/models/hio";
 
 /**

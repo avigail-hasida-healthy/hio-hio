@@ -1,4 +1,4 @@
-import { setupApiServer } from "@gw-workshop/helpers";
+import { setupApiServer } from "@hio-hio/helpers";
 import { setupDb } from "./src/lib/db";
 import { setupApi } from "./src/service";
 

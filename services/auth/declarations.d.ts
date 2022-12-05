@@ -1,1 +1,1 @@
-declare module "@gw-workshop/middleware";
+declare module "@hio-hio/middleware";

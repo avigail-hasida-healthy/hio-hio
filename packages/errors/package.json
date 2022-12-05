@@ -1,5 +1,5 @@
 {
-  "name": "@gw-workshop/errors",
+  "name": "@hio-hio/errors",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gw-workshop/errors": "^1.0.0"
+    "@hio-hio/errors": "^1.0.0"
   }
 }

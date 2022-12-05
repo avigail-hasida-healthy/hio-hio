@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-import { handleRequest } from "@gw-workshop/middleware";
+import { handleRequest } from "@hio-hio/middleware";
 import { createUser, verifyUser } from "../handlers";
 
 let usersRouter: Router;

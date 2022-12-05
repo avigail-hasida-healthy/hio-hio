@@ -1,4 +1,4 @@
-import { CreationDto } from "@gw-workshop/interfaces";
+import { CreationDto } from "@hio-hio/interfaces";
 
 /**
  * Represents an existing hio dto

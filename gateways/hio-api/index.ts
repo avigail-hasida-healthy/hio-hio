@@ -1,4 +1,4 @@
-import { setupApiServer } from "@gw-workshop/helpers";
+import { setupApiServer } from "@hio-hio/helpers";
 import { setupApi } from "./src/service";
 
 const port = 5010;

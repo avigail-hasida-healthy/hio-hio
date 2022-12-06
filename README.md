@@ -2,7 +2,7 @@
 
 ## What is in this repository
 
-This repository is a monorepo which contains:
+This repository is a monorepo, managed by npm workspaces and contains:
 
 - two micro services: "auth" and "hios",
 - their clients: "auth-client" and "hios-client",

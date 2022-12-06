@@ -6,7 +6,8 @@
     "dist"
   ],
   "include": [
-    "./**/*.ts"
+    "./**/*.ts",
+    "openapi.json"
   ],
   "compilerOptions": {
     "outDir": "./dist"

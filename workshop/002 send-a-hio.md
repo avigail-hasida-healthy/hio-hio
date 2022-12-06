@@ -75,4 +75,4 @@ Example for a response
 
 ---
 
-Till here we setup and run the project, now lets move on and expand this project's capabilities with the [First Assignment >>]()
+Till here we setup and run the project, now lets move on and expand this project's capabilities with the [First Assignment >>](./003%20first-assignment.md)

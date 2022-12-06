@@ -1,14 +1,8 @@
 import { Request } from "express";
 import { CreateUserDto } from "../dto/createUserDto";
-import { UserDto } from "../dto/userDto";
+import { modelToDto } from "../dto/userDto";
 import { hashData } from "../lib/crypto";
-import type { UserModel } from "../lib/models/user";
 import { usersRepository } from "../repositories";
-
-const modelToDto = (model: UserModel): UserDto => ({
-  id: model.id,
-  name: model.name,
-});
 
 /**
  * Converts the request to create user dto

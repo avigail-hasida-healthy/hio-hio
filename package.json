@@ -20,7 +20,6 @@
     "gateways/hio-api"
   ],
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.5.2",
     "swagger-jsdoc": "^6.2.5",
     "typescript": "^4.9.3"
   }

@@ -1,5 +1,7 @@
 import { Request } from "express";
+import { NotFoundError } from "@hio-hio/errors";
 import { CreateHioDto, HioDto, modelToDto } from "../dto/hioDto";
+import { usersApi } from "../lib/authClient";
 import { hiosRepository } from "../repositories";
 
 /**
@@ -18,6 +20,16 @@ export const requestToDto = (req: Request): CreateHioDto => ({
  * @returns Returns the hio dto
  */
 export const handler = async (dto: CreateHioDto): Promise<HioDto> => {
+  try {
+    await usersApi.getUser(dto.targetUserId);
+  } catch (error) {
+    if (error.response.status) {
+      throw new NotFoundError("Target user does not exist");
+    }
+
+    throw error;
+  }
+
   const hio = await hiosRepository.create(dto);
 
   return modelToDto(hio);

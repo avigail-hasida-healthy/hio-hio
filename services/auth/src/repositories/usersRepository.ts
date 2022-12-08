@@ -33,3 +33,11 @@ export const create = async (
     }
   }
 };
+
+/**
+ * Returns the user by the specified id
+ * @param id The user id
+ * @returns The user data
+ */
+export const getById = (id: string): Promise<UserModel> =>
+  User.findOne({ where: { id }, raw: true });

@@ -1,6 +1,6 @@
 import express, { Router } from "express";
 import { handleRequest } from "@hio-hio/middleware";
-import { createUser, verifyUser } from "../handlers";
+import { createUser, getUser, verifyUser } from "../handlers";
 
 let usersRouter: Router;
 
@@ -111,6 +111,40 @@ export const setupRouter = () => {
   usersRouter.post(
     "/verify",
     handleRequest(verifyUser.requestToDto, verifyUser.handler, 200)
+  );
+
+  /**
+   * @openapi
+   * /users/{id}:
+   *   get:
+   *     summary: Get user
+   *     description: Get user by id
+   *     operationId: getUser
+   *     tags:
+   *       - Users
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         description: The user id to get
+   *         schema:
+   *           type: string
+   *           format: uuid
+   *         required: true
+   *     responses:
+   *       200:
+   *         description: The created hio.
+   *         content:
+   *           application/json:
+   *             schema:
+   *               $ref: '#/components/schemas/User'
+   *       400:
+   *         $ref: '#/components/responses/BadRequest'
+   *       401:
+   *         $ref: '#/components/responses/Unauthorized'
+   */
+  usersRouter.get(
+    "/:id",
+    handleRequest(getUser.requestToDto, getUser.handler, 200)
   );
 
   return usersRouter;

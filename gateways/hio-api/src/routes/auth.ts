@@ -1,8 +1,7 @@
 import express, { Router } from "express";
 import passport from "passport";
 import { Strategy as localStrategy } from "passport-local";
-import * as signup from "../handlers/signup";
-import * as login from "../handlers/login";
+import { signup, login } from "../handlers";
 
 let authRouter: Router;
 

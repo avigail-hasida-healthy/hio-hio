@@ -4,7 +4,11 @@ Before we can send a "HIO" to someone this project has to run.
 
 ## Setup the environment
 
-We will begin with running `npm i` in the terminal:
+We will begin with installing java on the local computer, this is needed to run the openapi-generator-cli which generates the services' clients
+
+Download the .dmg file from this [link](https://www.java.com/en/download/) and follow the installation instructions.
+
+After java is installed, go back to the IDE, open the terminal and run
 
 ```bash
 npm install

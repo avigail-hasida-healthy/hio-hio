@@ -2,18 +2,18 @@ import express, { Router } from "express";
 import { handleRequest } from "@hio-hio/middleware";
 import { createHio } from "../handlers";
 
-let usersRouter: Router;
+let hiosRouter: Router;
 
 /**
  * Setup the hios routes and returns the express router
  * @returns the express router
  */
 export const setupRouter = () => {
-  if (usersRouter) {
-    return usersRouter;
+  if (hiosRouter) {
+    return hiosRouter;
   }
 
-  usersRouter = express.Router();
+  hiosRouter = express.Router();
 
   /**
    * @openapi
@@ -54,10 +54,10 @@ export const setupRouter = () => {
    *       400:
    *         $ref: '#/components/responses/BadRequest'
    */
-  usersRouter.post(
+  hiosRouter.post(
     "",
     handleRequest(createHio.requestToDto, createHio.handler, 201)
   );
 
-  return usersRouter;
+  return hiosRouter;
 };

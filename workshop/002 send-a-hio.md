@@ -18,7 +18,7 @@ An example for the response:
 {
   "id": "d6076ac5-7b11-48d5-b648-a54478806b76"
   "name": "john.doe"
-  "token": "TOP SECRET"
+  "token": "COPY THIS VALUE"
 }
 ```
 
@@ -26,7 +26,7 @@ Copy the value from the token, we need it to send a HIO!
 
 ## Setup Authentication
 
-The send HIO route is secure, which means we have to pass an authentication to the route which indeicates a valid user is sending the request.
+The send HIO route is secure, which means we have to pass an authentication to the route, this indeicates a valid user is sending the request.
 
 In this case the route is authenticated with a JWT token which should be passed via the "Authorization" header of the request.
 

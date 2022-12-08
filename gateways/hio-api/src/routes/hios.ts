@@ -1,6 +1,6 @@
 import express, { Router } from "express";
 import { handleRequest } from "@hio-hio/middleware";
-import * as sendHio from "../handlers/sendHio";
+import { sendHio } from "../handlers";
 
 let hiosRouter: Router;
 

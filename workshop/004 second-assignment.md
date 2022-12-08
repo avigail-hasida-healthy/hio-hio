@@ -6,7 +6,7 @@ Get my HIOs
 
 Every user needs a way to get the HIOs which were sent to him/her, and this is what we are going to implement in this assignment.
 
-We will start the same way as the previous assignment. adding a route in the **hios** service, then add a new route in **hio-api** gateway
+We will start the same way as the previous assignment. adding a new route in the **hios** service, then add a new route in **hio-api** gateway
 
 ## New route in hios service
 
@@ -18,12 +18,12 @@ These are the places where code should be added:
 
 - `/repositories/hioRepository.ts` Add a `getByTargetUserId` function which returns all the hios with the specified `targetUserId`.
 
-- `/dtos/hioDto.ts` Add `GetHiosByTargetUserIdDto` interface which declares `targetUserId` as `string`.
+- `/dtos/hioDto.ts` Add `GetHiosByTargetUserIdDto` interface which declares `targetUserId` as `string` field.
 
 - `/handlers/getHiosByTargetUserId.ts` Add this file and implement:
 
   - `hander` function which uses the repository and returns an array of `HioDto` (Use the `modelToDto` function which is located in `/dtos/hioDto.ts` file, this is required in order to convert the model into a dto)
-  - `requestToDto` function which receives a request and builds `GetHiosByTargetUserIdDto`.
+  - `requestToDto` function which receives a request and builds a `HioDto` array from the repository.
 
 - `/handlers/index.ts` Export the new handler.
 
@@ -45,7 +45,7 @@ The route will respond to `GET /hios` and will return the hios in which the curr
 
 Let's begin.
 
-- `/dtos/hioDto.ts` Export a new `GetHiosDto` interface which contains `targetUserId` as a string field.
+- `/dtos/hioDto.ts` Export a new `GetHiosDto` interface which contains `targetUserId` as a `string` field.
 
 - `handlers/getMyHios.ts` Create the file and add the following methods:
 
@@ -58,7 +58,9 @@ Let's begin.
   > 2. Enter TypeScript: Restart TS server. (type "restart" and it should autosuggest)
   >    This comman will show up if the current open file is a .ts file.
 
-- `/routes/hios.ts` Setup the new route in the express router and add the suitable openapi declaration in the comment above.
+- `/handlers/index.ts` Export the new handler.
+
+- `/routes/hios.ts` Setup the new route in the express router and add the suitable openapi declaration in the comment above the route setup.
 
   Be sure to include the `security` section in the specification which states this route is secured.
 
@@ -67,5 +69,7 @@ Think the route is ready? Let's find out.
 Run the project and browse to [http://localhost:5010/docs](http://localhost:5010/docs), you should see the new route in the list of routes
 
 ---
+
+Well Done! 🎊
 
 We can move on the the [Last Assignment >>]()

@@ -4,7 +4,7 @@ Before we can send a "HIO" to someone this project has to run.
 
 ## Setup the environment
 
-We will begin with installing java on the local computer, this is needed to run the openapi-generator-cli which generates the services' clients
+We will begin with installing java on the local computer, this is needed to run the `openapi-generator-cli` which generates the services clients
 
 Download the .dmg file from this [link](https://www.java.com/en/download/) and follow the installation instructions.
 
@@ -14,7 +14,7 @@ After java is installed, go back to the IDE, open the terminal and run
 npm install
 ```
 
-This installed all the project's dependency but also it created an `openapi.json` file for each of the services and the gateway, and regenerated the services' clients
+This installed all the project's dependency but also it created an `openapi.json` file for each of the services and the gateway, and regenerated the services clients
 
 Now, lets start with configuring the IDE. This will enable us to run all the services at once (two services and one gateway, to be precise...)
 

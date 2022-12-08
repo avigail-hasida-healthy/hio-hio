@@ -127,27 +127,15 @@ docker compose up -d
 
 This will run docker in detached mode.
 
-Open a second terminal and run:
+Now run:
 
 ```bash
-npm start --w services/auth
-```
-
-Open another terminal and run:
-
-```bash
-npm start --w services/hios
-```
-
-Open (the last) terminal and run:
-
-```bash
-npm start --w gateways/hio-api
+npx -y concurrently 'npm:start:*'
 ```
 
 All three projects should be running now.
 
-When you want to stop the projects, go to all three terminals and click `CTRL + C` and in the docker terminal run:
+When you want to stop the projects, click on `CTRL + C` and run:
 
 ```bash
 docker compose down

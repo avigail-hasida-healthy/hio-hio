@@ -128,13 +128,17 @@ Remove all the `requestBody` section. We describe a `GET` route which does not c
 
 > You can read more about openapi parameters in swagger openapi specification [here](https://swagger.io/docs/specification/describing-parameters/)
 
-In the `responses` section, remove the `401:` defenition. This route is not secured so it will not response with "Unauthorized". And edit the `200:` section's `description` to `The user data`.
+In the `responses` section, remove the `401:` defenition. This route is not secured so it will not response with "Unauthorized". Instead, add a `404:` and change the reference to `#/components/responses/NotFound`.
+
+Also, edit the `200:` section's `description` to `The user data`.
 
 Openapi - Done!
 
-Actually, we are done with declaring the route. We can now try it out.
+Actually, we are done declaring the route. We can now try it out.
 
 #### Swagger UI
+
+The `/docs` / swagger we used in the previous section was the one declared in **hio-api** gateway the services does not have a swagger definition yet, so we should declare a seperate swagger to each of the services.
 
 Lets add swagger to the **"auth"** service.
 

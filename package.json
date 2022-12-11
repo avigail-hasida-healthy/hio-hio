@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npx -y concurrently 'npm:start:*'",
     "start:auth": "npm run start --w services/auth",
     "start:hios": "npm run start --w services/hios",
     "start:hio-api": "npm run start --w gateways/hio-api",

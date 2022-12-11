@@ -134,7 +134,7 @@ This will run docker in detached mode.
 Now run:
 
 ```bash
-npx -y concurrently 'npm:start:*'
+npm start
 ```
 
 All three projects should be running now.

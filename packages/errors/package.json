@@ -2,14 +2,10 @@
   "name": "@hio-hio/errors",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "scripts": {
-    "prepare": "tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@hio-hio/errors": "^1.0.0"
-  }
+  "license": "ISC"
 }

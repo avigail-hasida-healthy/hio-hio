@@ -115,6 +115,43 @@ export const HiosApiAxiosParamCreator = function (configuration?: Configuration)
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Get hios by target user id
+         * @summary Get hios by target user id
+         * @param {string} targetUserId The target user id to retreive the hios by.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getHiosByTargetUserId: async (targetUserId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'targetUserId' is not null or undefined
+            assertParamExists('getHiosByTargetUserId', 'targetUserId', targetUserId)
+            const localVarPath = `/hios`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (targetUserId !== undefined) {
+                localVarQueryParameter['targetUserId'] = targetUserId;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -134,6 +171,17 @@ export const HiosApiFp = function(configuration?: Configuration) {
          */
         async createHio(createHioRequest: CreateHioRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Hio>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createHio(createHioRequest, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios as unknown as AxiosInstance, BASE_PATH, configuration);
+        },
+        /**
+         * Get hios by target user id
+         * @summary Get hios by target user id
+         * @param {string} targetUserId The target user id to retreive the hios by.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getHiosByTargetUserId(targetUserId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Hio>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getHiosByTargetUserId(targetUserId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios as unknown as AxiosInstance, BASE_PATH, configuration);
         },
     }
@@ -156,6 +204,16 @@ export const HiosApiFactory = function (configuration?: Configuration, basePath?
         createHio(createHioRequest: CreateHioRequest, options?: any): AxiosPromise<Hio> {
             return localVarFp.createHio(createHioRequest, options).then((request) => request(axios, basePath));
         },
+        /**
+         * Get hios by target user id
+         * @summary Get hios by target user id
+         * @param {string} targetUserId The target user id to retreive the hios by.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getHiosByTargetUserId(targetUserId: string, options?: any): AxiosPromise<Array<Hio>> {
+            return localVarFp.getHiosByTargetUserId(targetUserId, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -176,6 +234,18 @@ export class HiosApi extends BaseAPI {
      */
     public createHio(createHioRequest: CreateHioRequest, options?: AxiosRequestConfig) {
         return HiosApiFp(this.configuration).createHio(createHioRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get hios by target user id
+     * @summary Get hios by target user id
+     * @param {string} targetUserId The target user id to retreive the hios by.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HiosApi
+     */
+    public getHiosByTargetUserId(targetUserId: string, options?: AxiosRequestConfig) {
+        return HiosApiFp(this.configuration).getHiosByTargetUserId(targetUserId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

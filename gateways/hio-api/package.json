@@ -16,6 +16,7 @@
     "@hio-hio/auth-client": "^1.0.0",
     "@hio-hio/helpers": "^1.0.0",
     "@hio-hio/hios-client": "^1.0.0",
+    "@hio-hio/middleware": "^1.0.0",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/passport": "^1.0.11",
     "@types/passport-jwt": "^3.0.7",

@@ -2,7 +2,7 @@
   "name": "@hio-hio/interfaces",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "devDependencies": {},
   "scripts": {
     "prepare": "tsc --build",

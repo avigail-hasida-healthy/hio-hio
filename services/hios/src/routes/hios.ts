@@ -1,6 +1,6 @@
 import express, { Router } from "express";
 import { handleRequest } from "@hio-hio/middleware";
-import { createHio } from "../handlers";
+import { createHio, getHiosByTargetUserId } from "../handlers";
 
 let usersRouter: Router;
 
@@ -57,6 +57,44 @@ export const setupRouter = () => {
   usersRouter.post(
     "",
     handleRequest(createHio.requestToDto, createHio.handler, 201)
+  );
+
+  /**
+   * @openapi
+   * /hios:
+   *   get:
+   *     summary: Get hios by target user id
+   *     description: Get hios by target user id
+   *     operationId: getHiosByTargetUserId
+   *     tags:
+   *       - Hios
+   *     parameters:
+   *       - in: query
+   *         name: targetUserId
+   *         description: The target user id to retreive the hios by.
+   *         required: true
+   *         schema:
+   *           type: string
+   *           format: uuid
+   *     responses:
+   *       200:
+   *         description: The created hio.
+   *         content:
+   *           application/json:
+   *             schema:
+   *               type: array
+   *               items:
+   *                 $ref: '#/components/schemas/Hio'
+   *       400:
+   *         $ref: '#/components/responses/BadRequest'
+   */
+  usersRouter.get(
+    "",
+    handleRequest(
+      getHiosByTargetUserId.requestToDto,
+      getHiosByTargetUserId.handler,
+      200
+    )
   );
 
   return usersRouter;

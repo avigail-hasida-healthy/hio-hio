@@ -10,3 +10,11 @@ import { Hio, HioModel } from "../lib/models/hio";
 export const create = async (
   createModel: CreationModel<HioModel>
 ): Promise<HioModel> => Hio.create(createModel, { raw: true });
+
+/**
+ * Returns hios by the specified target user id
+ * @param targetUserId The user id to search by
+ */
+export const getByTargetUserId = async (
+  targetUserId: string
+): Promise<HioModel[]> => Hio.findAll({ where: { targetUserId }, raw: true });

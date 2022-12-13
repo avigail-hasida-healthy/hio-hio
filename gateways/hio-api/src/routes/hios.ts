@@ -1,6 +1,7 @@
 import express, { Router } from "express";
 import { handleRequest } from "@hio-hio/middleware";
 import * as sendHio from "../handlers/sendHio";
+import * as getMyHios from "../handlers/getMyHios";
 
 let hiosRouter: Router;
 
@@ -55,6 +56,36 @@ export const setupRouter = () => {
   hiosRouter.post(
     "",
     handleRequest(sendHio.requestToDto, sendHio.handler, 201)
+  );
+
+  /**
+   * @openapi
+   * /hios:
+   *   get:
+   *     summary: Get my Hios
+   *     description: Get the Hios sent to the current user
+   *     operationId: getMyHios
+   *     security:
+   *       - hio_auth: []
+   *     tags:
+   *       - Hios
+   *     responses:
+   *       200:
+   *         description: The hios which were sent to me.
+   *         content:
+   *           application/json:
+   *             schema:
+   *               type: array
+   *               items:
+   *                 $ref: '#/components/schemas/Hio'
+   *       400:
+   *         $ref: '#/components/responses/BadRequest'
+   *       401:
+   *         $ref: '#/components/responses/Unauthorized'
+   */
+  hiosRouter.get(
+    "",
+    handleRequest(getMyHios.requestToDto, getMyHios.handler, 200)
   );
 
   return hiosRouter;

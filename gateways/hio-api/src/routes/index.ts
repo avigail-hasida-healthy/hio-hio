@@ -2,7 +2,7 @@ import { Application } from "express";
 import passport from "passport";
 import { Strategy as JWTStrategy, ExtractJwt } from "passport-jwt";
 import swaggerUi from "swagger-ui-express";
-import { validateApiSpec } from "@hio-hio/middleware";
+import { validateApiSpec, handleErrors } from "@hio-hio/middleware";
 import apiSpec from "../../openapi.json";
 import { setupRouter as setupHiosRouter } from "./hios";
 import { setupRouter as setupAuthRouter } from "./auth";
@@ -42,6 +42,8 @@ export const setupRoutes = (app: Application) => {
   app.use(passport.authenticate("jwt", { session: false }));
 
   app.use("/hios", setupHiosRouter());
+
+  app.use(handleErrors);
 };
 
 /**

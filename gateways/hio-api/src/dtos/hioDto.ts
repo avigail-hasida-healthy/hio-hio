@@ -14,3 +14,7 @@ export interface HioDto {
  * Represents the send a hio parameters
  */
 export interface SendHioDto extends CreationDto<HioDto> {}
+
+export interface GetHiosDto {
+  targetUserId: string;
+}

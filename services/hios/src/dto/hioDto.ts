@@ -16,6 +16,10 @@ export interface HioDto {
  */
 export interface CreateHioDto extends CreationDto<HioDto> {}
 
+export interface GetHiosByTargetUserId {
+  targetUserId: string;
+}
+
 /**
  * Extracts hio dto from hio model
  */

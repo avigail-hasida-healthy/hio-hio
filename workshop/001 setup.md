@@ -107,6 +107,8 @@ These files declare the tasks and actions to execute while running this project.
 
 It starts with `docker-compose up` continues with running all the services and when stopping the services, `docker-compose down` is executed.
 
+> For more information about VSCode and typescript debugging see [here](https://code.visualstudio.com/docs/typescript/typescript-debugging)
+
 #### Run the project
 
 Go to "Run and Debug" sidebar or use `⇧⌘D` shortcut to show the sidebar

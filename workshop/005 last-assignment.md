@@ -179,3 +179,9 @@ declare module "@hio-hio/middleware";
 This `module` declaration tells typescript to ignore the typings in `@hio-hio/middleware` package and use it as is,wihtout typings.
 
 Now that we are going to declare the package's typgins we do not need this file anymore
+
+---
+
+That's it! you finished all the assignments planned for this workshop. 🎊🎉🎊
+
+If you have strength to one more assignment, we have an optional assignment planned for you. You can check it out [here >>](./006%20optional-assignment.md)

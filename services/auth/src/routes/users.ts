@@ -113,6 +113,11 @@ export const setupRouter = () => {
     handleRequest(verifyUser.requestToDto, verifyUser.handler, 200)
   );
 
+  usersRouter.get(
+    "/:id",
+    handleRequest(getUser.requestToDto, getUser.handler, 200)
+  );
+
   return usersRouter;
 };
 

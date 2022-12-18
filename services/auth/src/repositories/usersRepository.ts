@@ -33,3 +33,9 @@ export const create = async (
     }
   }
 };
+
+export const getById = async (id: string): Promise<UserModel> => {
+  const user = await User.findOne({ where: { id } });
+
+  return user;
+};

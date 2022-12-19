@@ -7,9 +7,9 @@ class ApiError extends Error {
     displayMessage,
     statusCode
   ) {
+    super(message ?? displayMessage);
     this.displayMessage = displayMessage;
     this.statusCode = statusCode;
-    super(message ?? displayMessage);
     Error.captureStackTrace(this, ApiError);
   }
 }

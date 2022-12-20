@@ -102,7 +102,7 @@ We will start by copying the openapi from the previous route and modify it as ne
 Copy the `@openapi` comment above the `/verify` route declaration and paste it above the `:id` route declaration.
 
 Change <s>`/users/verify:`</s> to `/users/{id}:`
-
+YOU ARE HERE
 > We need to declare the whole route here, because it is not part of the express router
 
 Change <s>`post:`</s> to `get:`

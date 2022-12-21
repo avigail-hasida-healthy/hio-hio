@@ -164,6 +164,11 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(apiSpec));
 
 #### Run the service
 
+Run npm install
+```bash
+npm install
+```
+
 We are now ready to test our new and shining route.
 
 Run the project (`F5`).
